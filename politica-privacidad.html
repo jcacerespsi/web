@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Javi Cáceres Psicólogo</title>
+    <meta name="description" content="Política de Privacidad de Javi Cáceres Psicólogo. Conoce cómo tratamos tus datos personales y cuáles son tus derechos.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6D28D9;
+            --secondary-color: #5B21B6;
+            --accent-color: #8B5CF6;
+            --light-lila-bg: #EDE9FE;
+            --text-dark: #1f2937; 
+            --text-light: #6b7280; 
+            --bg-light: #f9fafb; 
+            --white: #ffffff;
+            --success: #10b981; 
+            --warning: #f59e0b; 
+            --danger-bg: #fee2e2; 
+            --danger-text: #b91c1c; 
+            --info-bg: #e0f2fe; 
+            --info-text: #075985; 
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            background-color: var(--bg-light); 
+        }
+
+        /* Header & Navigation (Copiado de tu index.html) */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.6rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; 
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 1001;
+        }
+
+        .logo-img {
+            height: 45px; 
+            width: auto;
+        }
+        .colegiado-info {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+        .colegiado-info strong {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: block; 
+        }
+
+        .nav-menu { 
+            display: flex;
+            list-style: none;
+            gap: 1.5rem; 
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            font-size: 0.9rem; 
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 70%; 
+        }
+
+        .cta-btn-desktop { 
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.7rem 1.4rem; 
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            font-size: 0.9rem;
+        }
+        .cta-btn-desktop:hover {
+            transform: translateY(-2px) scale(1.03); 
+            box-shadow: var(--shadow-lg);
+        }
+        .cta-btn-desktop i {
+            margin-right: 0.5rem;
+        }
+        
+        .hamburger-menu {
+            display: none; 
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            z-index: 1005; 
+        }
+
+        .mobile-nav-panel {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.98); 
+            backdrop-filter: blur(5px);
+            z-index: 1002; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding-top: 70px; 
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
+        }
+        .mobile-nav-panel.active {
+            display: flex; 
+            transform: translateX(0);
+        }
+        .mobile-nav-panel ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .mobile-nav-panel ul li {
+            margin-bottom: 1.5rem;
+        }
+        .mobile-nav-panel ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.3rem; 
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .mobile-nav-panel ul li a:hover,
+        .mobile-nav-panel ul li a:focus {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .mobile-nav-panel .cta-btn-mobile {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.8rem 2rem; 
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        .mobile-nav-panel .cta-btn-mobile i {
+            margin-right: 0.5rem;
+        }
+
+        /* Estilos Generales para Secciones */
+        .section {
+            padding: 4.5rem 0; 
+        }
+        .section-light { background: var(--bg-light); }
+        .section-white { background: white; }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem; 
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem; 
+        }
+
+        .section-title {
+            font-size: 2.3rem; 
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        /* Contenedor principal para la página de política de privacidad */
+        .privacy-policy-container {
+            padding-top: 120px; /* Ajustar según la altura del header */
+            padding-bottom: 4rem;
+        }
+
+        .privacy-policy-content h2 {
+            font-size: 1.7rem; /* Ligeramente más pequeño que section-title */
+            font-weight: 700;
+            color: var(--primary-color); /* Usar color primario para destacar secciones */
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid var(--light-lila-bg);
+            padding-bottom: 0.5rem;
+        }
+        
+        .privacy-policy-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .privacy-policy-content p, 
+        .privacy-policy-content li {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            line-height: 1.75;
+            font-size: 0.95rem;
+        }
+        
+        .privacy-policy-content ul {
+            list-style: disc;
+            padding-left: 25px; /* Un poco más de indentación */
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-policy-content strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .privacy-policy-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .privacy-policy-content a:hover {
+            text-decoration: underline;
+            color: var(--secondary-color);
+        }
+        
+        .responsible-details p {
+            margin-bottom: 0.3rem; /* Menos espacio entre líneas de dirección */
+        }
+
+
+        /* Footer (Copiado de tu index.html) */
+        .footer {
+            background: var(--text-dark);
+            color: #d1d5db; 
+            padding: 4.5rem 0 2rem; 
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+            gap: 3rem; 
+            margin-bottom: 3rem; 
+        }
+        .footer-section h3 {
+            font-size: 1.15rem; 
+            font-weight: 700;
+            margin-bottom: 1.25rem; 
+            color: white;
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+        }
+        .footer-section p,
+        .footer-section li {
+            color: #a1a1aa; 
+            margin-bottom: 0.7rem; 
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+        .footer-section ul { list-style: none; padding-left: 0; }
+        .footer-section a {
+            color: #a1a1aa;
+            text-decoration: none;
+            transition: color 0.3s ease, padding-left 0.3s ease; 
+            display: inline-block; 
+        }
+        .footer-section a:hover {
+            color: var(--accent-color);
+            padding-left: 5px; 
+        }
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem; 
+            margin-bottom: 0.9rem; 
+        }
+        .contact-info i {
+            color: var(--accent-color);
+            font-size: 1.1rem; 
+            margin-top: 3px; 
+            width: 20px;
+            text-align: center;
+        }
+        .contact-info span, .contact-info a { 
+            flex: 1;
+            color: #a1a1aa; 
+            text-decoration: none; 
+        }
+         .contact-info a:hover {
+            color: var(--accent-color); 
+        }
+        .footer-logo-colegio {
+            max-width: 150px; 
+            margin-top: 1rem;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
+            padding-top: 2rem; 
+            text-align: center;
+            color: #71717a; 
+            font-size: 0.85rem;
+        }
+        .footer-bottom p { margin-bottom: 0.5rem; }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) { 
+            .nav-menu, .cta-btn-desktop { display: none; } 
+            .hamburger-menu { display: block; } 
+            .privacy-policy-content h2 { font-size: 1.5rem; }
+            .privacy-policy-content h3 { font-size: 1.2rem; }
+        }
+
+        @media (max-width: 768px) { 
+            .nav { padding: 0.6rem 1rem; } 
+            .logo-img { height: 40px; }
+            .colegiado-info { display: none; } 
+            .section { padding: 3.5rem 0; }
+            .section-header { margin-bottom: 2.5rem; }
+            .section-title { font-size: 1.8rem; }
+            .privacy-policy-container { padding-top: 100px; }
+            .privacy-policy-content h2 { font-size: 1.4rem; }
+            .privacy-policy-content h3 { font-size: 1.1rem; }
+            .privacy-policy-content p, .privacy-policy-content li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                 <img src="imagenes/logo-512px.webp" alt="Logo Javi Cáceres Psicólogo" class="logo-img">
+                <div class="colegiado-info">
+                    <strong>Javier Cáceres Velasco</strong><br>Psicólogo Sanitario<br>Col. 16.772 COPC
+                </div>
+            </div>
+            <ul class="nav-menu"> 
+                <li><a href="index.html#servicios-clave">Lo Que Hago</a></li>
+                <li><a href="index.html#ia-coterapeuta">IA en Terapia</a></li>
+                <li><a href="index.html#tarifas">Tarifas</a></li>
+                <li><a href="index.html#quien-soy">Sobre Mí</a></li>
+                <li><a href="index.html#testimonios">Opiniones</a></li>
+                <li><a href="index.html#preguntas-frecuentes">Dudas</a></li>
+                <li><a href="index.html#contacto">Hablemos</a></li>
+            </ul>
+            <a href="index.html#contacto" class="cta-btn-desktop"> 
+                <i class="fas fa-calendar-check"></i>
+                Pedir Cita
+            </a>
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+         <div class="mobile-nav-panel" id="mobileNavPanel">
+            <ul>
+                <li><a href="index.html#servicios-clave">Lo Que Hago</a></li>
+                <li><a href="index.html#ia-coterapeuta">IA en Terapia</a></li>
+                <li><a href="index.html#tarifas">Tarifas</a></li>
+                <li><a href="index.html#quien-soy">Sobre Mí</a></li>
+                <li><a href="index.html#testimonios">Opiniones</a></li>
+                <li><a href="index.html#preguntas-frecuentes">Dudas</a></li>
+                <li><a href="index.html#contacto">Hablemos</a></li>
+            </ul>
+            <a href="index.html#contacto" class="cta-btn-mobile">
+                <i class="fas fa-calendar-check"></i>
+                Pedir Cita
+            </a>
+        </div>
+    </header>
+
+    <main class="privacy-policy-container">
+        <section class="section section-white">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">Compromiso con tu Privacidad</p>
+                    <h1 class="section-title">Política de Privacidad</h1>
+                </div>
+
+                <div class="privacy-policy-content">
+                    <p>La confidencialidad y la seguridad son valores primordiales y, en consecuencia, asumimos el compromiso de garantizar la privacidad del Usuario en todo momento y de no recabar información innecesaria. A continuación, le proporcionamos toda la información necesaria sobre nuestra Política de Privacidad en relación con los datos personales que recabamos, explicándole:</p>
+                    <ul>
+                        <li>Quién es el responsable del tratamiento de sus datos.</li>
+                        <li>Para qué finalidades recabamos los datos que le solicitamos.</li>
+                        <li>Cuál es la legitimación para su tratamiento.</li>
+                        <li>Durante cuánto tiempo los conservamos.</li>
+                        <li>A qué destinatarios se comunican sus datos.</li>
+                        <li>Cuáles son sus derechos y cómo ejercerlos.</li>
+                    </ul>
+
+                    <h2>1. RESPONSABLE:</h2>
+                    <div class="responsible-details">
+                        <p><strong>Francisco Javier Cáceres Velasco</strong></p>
+                        <p>NIF: 40439688F</p>
+                        <p>C/ Alberes, 7</p>
+                        <p>Castelló d’Empúries, 17487</p>
+                        <p>Girona</p>
+                        <p>Spain</p>
+                    </div>
+
+                    <h2>2. FINALIDADES, LEGITIMACIÓN Y CONSERVACIÓN DE LOS TRATAMIENTOS DE LOS DATOS ENVIADOS A TRAVÉS DE:</h2>
+                    
+                    <h3>Formulario de Contacto</h3>
+                    <p><strong>Finalidad:</strong> facilitarle un medio para que pueda ponerse en contacto con nosotros y contestar a sus solicitudes de información, así como enviarle comunicaciones de nuestros productos, servicios y actividades, inclusive por medios electrónicos (correo electrónico, SMS, etc.), si marca la casilla de aceptación.</p>
+                    <p><strong>Legitimación:</strong> el consentimiento del usuario al solicitarnos información a través de nuestro formulario de contactos y al marcar la casilla de aceptación de envío de información.</p>
+                    <p><strong>Conservación:</strong> una vez resuelta su solicitud por medio de nuestro formulario o contestada por correo electrónico, si no ha generado un nuevo tratamiento, y en caso de haber aceptado recibir envíos comerciales, hasta que solicite la baja de los mismos.</p>
+
+                    <h3>Envío de correos electrónicos</h3>
+                    <p><strong>Finalidad:</strong> contestar a sus solicitudes de información, atender sus peticiones y responder sus consultas o dudas. En caso de recibir su Currículum Vitae, sus datos personales y curriculares podrán formar parte de nuestras bases de datos para participar en nuestros procesos de selección presentes y futuros.</p>
+                    <p><strong>Legitimación:</strong> el consentimiento del usuario al solicitarnos información a través de la dirección de correo electrónico o enviarnos sus datos y CV para participar en nuestros procesos de selección.</p>
+                    <p><strong>Conservación:</strong> una vez resulta contestada su petición por correo electrónico, si no ha generado un nuevo tratamiento. En el caso de recibir su CV, sus datos podrán ser conservados durante un año máximo para futuros procesos de selección.</p>
+                    
+                    <h3>Obligación de facilitarnos sus datos personales y consecuencias de no hacerlo.</h3>
+                    <p>El suministro de datos personales requiere una edad mínima de 14 años o, en su caso, la edad mínima que establezca la normativa de protección de datos aplicable y/o disponer de capacidad jurídica suficiente para contratar.</p>
+                    <p>Los datos personales solicitados son necesarios para gestionar sus solicitudes, darle de alta como usuario y/o prestarle los servicios que pueda contratar, por lo que, si no nos los facilita, no podremos atenderle correctamente ni prestarle el servicio que ha solicitado.</p>
+                    <p>En todo caso, nos reservamos el derecho de decidir sobre la incorporación o no de sus datos personales y demás información a nuestras bases de datos.</p>
+
+                    <h2>3. DESTINATARIOS DE SUS DATOS.</h2>
+                    <p>Sus datos son confidenciales y no se cederán a terceros, salvo que exista obligación legal.</p>
+
+                    <h2>4. DERECHOS EN RELACIÓN CON SUS DATOS PERSONALES.</h2>
+                    <p>Cualquier persona puede retirar su consentimiento en cualquier momento, cuando el mismo se haya otorgado para el tratamiento de sus datos. En ningún caso, la retirada de este consentimiento condiciona la ejecución del contrato de suscripción o las relaciones generadas con anterioridad.</p>
+                    <p>Igualmente, puede ejercer los siguientes derechos:</p>
+                    <ul>
+                        <li>Solicitar el acceso a sus datos personales o su rectificación cuando sean inexactos.</li>
+                        <li>Solicitar su supresión cuando, entre otros motivos, los datos ya no sean necesarios para los fines para los que fueron recogidos.</li>
+                        <li>Solicitar la limitación de su tratamiento en determinadas circunstancias.</li>
+                        <li>Solicitar la oposición al tratamiento de sus datos por motivos relacionados con su situación particular.</li>
+                        <li>Solicitar la portabilidad de los datos en los casos previstos en la normativa.</li>
+                        <li>Otros derechos reconocidos en las normativas aplicables.</li>
+                    </ul>
+                    <p><strong>Dónde y cómo solicitar sus Derechos:</strong> Mediante un escrito dirigido al responsable a su dirección postal o electrónica (indicadas en el apartado 1), indicando la referencia “Datos Personales”, especificando el derecho que se quiere ejercer y respecto a qué datos personales.</p>
+                    <p>En caso de divergencias con la empresa en relación con el tratamiento de sus datos, puede presentar una reclamación ante la Agencia de Protección de Datos (<a href="https://www.agpd.es" target="_blank" rel="noopener noreferrer">www.agpd.es</a>).</p>
+
+                    <h2>5. SEGURIDAD DE SUS DATOS PERSONALES</h2>
+                    <p>Con el objetivo de salvaguardar la seguridad de sus datos personales, le informamos que hemos adoptado todas las medidas de índole técnica y organizativa necesarias para garantizar la seguridad de los datos personales suministrados de su alteración, pérdida y tratamientos o accesos no autorizados.</p>
+
+                    <h2>6. ACTUALIZACIÓN DE SUS DATOS</h2>
+                    <p>Es importante que para que podamos mantener sus datos personales actualizados, nos informe siempre que haya habido alguna modificación en ellos, en caso contrario, no respondemos de la veracidad de los mismos.</p>
+                    <p>No nos hacemos responsables de la política de privacidad respecto a los datos personales que pueda facilitar a terceros por medio de los enlaces disponibles en nuestra página web.</p>
+                    <p>La presente Política de Privacidad puede ser modificada para adaptarlas a los cambios que se produzca en nuestra web, así como modificaciones legislativas o jurisprudenciales sobre datos personales que vayan apareciendo, por lo que exige su lectura, cada vez que nos facilite sus datos a través de esta Web.</p>
+
+                    <h2>RESPONSABILIDADES</h2>
+                    <p>Al poner a disposición del usuario esta página Web queremos ofrecerle un servicio de calidad, utilizando la máxima diligencia en la prestación del mismo, así como en los medios tecnológicos utilizados. No obstante, no responderemos de la presencia de virus y otros elementos que de algún modo puedan dañar el sistema informático del usuario.</p>
+                    <p>No garantizamos que la disponibilidad del servicio sea continua e ininterrumpida.</p>
+                    <p>El USUARIO tiene prohibido cualquier tipo de acción sobre nuestro portal que origine una excesiva sobrecarga de funcionamiento a nuestros sistemas informáticos, así como la introducción de virus, o instalación de robots, o software que altere el normal funcionamiento de nuestra web, o en definitiva pueda causar daños a nuestros sistemas informáticos.</p>
+                    <p>El USUARIO asume toda la responsabilidad derivada del uso de nuestra página web.</p>
+                    <p>El USUARIO reconoce que ha entendido toda la información respecto a las condiciones de uso de nuestro portal, y reconoce que son suficientes para la exclusión del error en las mismas, y por lo tanto, las acepta integra y expresamente.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Javi Cáceres - Psicólogo</h3>
+                    <p>Terapia breve y eficaz para personas que desean sentirse mejor y buscan soluciones reales. Consulta presencial en Roses y atención online global. Porque mereces una vida plena y satisfactoria.</p>
+                    <div style="margin-top: 1rem;">
+                        <strong style="color: var(--accent-color);">Nº Colegiado:</strong> 16.772 (COPC)<br>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios Destacados</h3>
+                    <ul>
+                        <li><a href="index.html#ansiedad-depresion">Superar Ansiedad y Desánimo</a></li>
+                        <li><a href="terapia-breve-online.html">Terapia Breve Online</a></li>
+                        <li><a href="terapia-pareja.html">Terapia de Pareja</a></li>
+                        <li><a href="index.html#ia-coterapeuta">Psicoterapia Asistida por IA</a></li>
+                         <li><a href="index.html#quien-soy">Conoce Mi Enfoque</a></li>
+                         <li><a href="index.html#preguntas-frecuentes">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Consulta presencial en <strong>Roses</strong> (Girona)</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:javicaceres@cop.es">javicaceres@cop.es</a>
+                    </div>
+                     <div class="contact-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+34621372442">621 372 442</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/34621372442?text=Hola%20Javi,%20me%20gustaría%20pedir%20información%20sobre%20tus%20servicios." target="_blank">WhatsApp: 621 372 442</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-laptop-house"></i> 
+                        <span>Sesiones online disponibles globalmente</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Aspectos Legales y Profesionales</h3>
+                    <ul>
+                        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="aviso-legal.html">Aviso Legal</a></li> <li><a href="politica-cookies.html">Política de Cookies</a></li>
+                        <li><a href="#">Código Deontológico Profesional</a></li> </ul>
+                    <img src="imagenes/colegio psicologos 500px.png" alt="Logo Col·legi Oficial de Psicologia de Catalunya" class="footer-logo-colegio">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Javi Cáceres - Psicólogo. Todos los derechos reservados. Contenido original y profesional.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                    Web diseñada para ofrecer información clara y facilitar el acceso a un apoyo psicológico de calidad | Cumple con la normativa sanitaria vigente.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/34621372442?text=Hola%20Javi,%20me%20gustaría%20pedir%20información%20sobre%20tus%20servicios." class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for navigation links (si se mantiene la navegación completa)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // Comprobar si el enlace es a la misma página o a index.html
+            const currentPath = window.location.pathname.split("/").pop();
+            const anchorPath = anchor.getAttribute('href').split("#")[0];
+
+            if (!anchorPath || anchorPath === currentPath || (currentPath === "politica-privacidad.html" && anchorPath === "index.html")) {
+                anchor.addEventListener('click', function (e) {
+                    const targetIdFull = this.getAttribute('href');
+                    const targetIdParts = targetIdFull.split('#');
+                    
+                    if (targetIdParts.length > 1) {
+                        const targetId = '#' + targetIdParts[1];
+                        // Si el enlace es a index.html#seccion desde otra página
+                        if (targetIdParts[0] && targetIdParts[0] !== window.location.pathname.split("/").pop()) {
+                            // Simplemente navega, el navegador se encargará del anclaje
+                            return; 
+                        }
+                        e.preventDefault(); // Prevenir solo si es anclaje en la misma página
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            let headerOffset = document.querySelector('.header')?.offsetHeight || 70;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                    // Cierra el menú móvil si está abierto
+                    const mobileNav = document.getElementById('mobileNavPanel');
+                    if (mobileNav && mobileNav.classList.contains('active')) {
+                        mobileNav.classList.remove('active');
+                        const hamburgerIcon = document.getElementById('hamburgerMenu').querySelector('i');
+                        if (hamburgerIcon) {
+                            hamburgerIcon.classList.remove('fa-times');
+                            hamburgerIcon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (header) { 
+                if (window.scrollY > 50) { 
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                    header.style.boxShadow = 'var(--shadow-md)'; 
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = 'none';
+                }
+            }
+        });
+        
+        // Hamburger Menu Logic
+        const hamburgerBtn = document.getElementById('hamburgerMenu');
+        const mobileNav = document.getElementById('mobileNavPanel');
+        const hamburgerIcon = hamburgerBtn ? hamburgerBtn.querySelector('i') : null;
+
+        if (hamburgerBtn && mobileNav && hamburgerIcon) {
+            hamburgerBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+                if (mobileNav.classList.contains('active')) {
+                    hamburgerIcon.classList.remove('fa-bars');
+                    hamburgerIcon.classList.add('fa-times');
+                    // Opcional: Prevenir scroll del body cuando el menú móvil está abierto
+                    // document.body.style.overflow = 'hidden';
+                } else {
+                    hamburgerIcon.classList.remove('fa-times');
+                    hamburgerIcon.classList.add('fa-bars');
+                    // Opcional: Restaurar scroll del body
+                    // document.body.style.overflow = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
